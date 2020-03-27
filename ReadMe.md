@@ -33,14 +33,14 @@ You are expected to be able to answer all these questions. Your responses contri
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
-- [ ] Add your project manager as collaborator on Github.
-- [ ] Clone your OWN version of the repository (Not Lambda's by mistake!).
-- [ ] CD into the project base directory `cd lambda-eats`
-- [ ] Download project dependencies by running `npm install`
-- [ ] Start up the app using `npm start`
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`. Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [DONE] Create a forked copy of this project.
+- [DONE] Add your project manager as collaborator on Github.
+- [DONE] Clone your OWN version of the repository (Not Lambda's by mistake!).
+- [DONE] CD into the project base directory `cd lambda-eats`
+- [DONE] Download project dependencies by running `npm install`
+- [DONE] Start up the app using `npm start`
+- [DONE] Create a new branch: git checkout -b `<firstName-lastName>`. Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [DONE] Push commits: git push origin `<firstName-lastName>`.
 
 ### Task 2: Minimum Viable Product
 
