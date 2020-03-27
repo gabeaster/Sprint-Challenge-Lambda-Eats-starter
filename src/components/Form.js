@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 
 const formSchema = yup.object().shape({
     name: yup.string().required("must give name").min(2, "name must be more than 2 characters"),
-    size: yup.string().required("must choose size"),
-    sauce: yup.string().required("must choose sauce"),
-    toppings: yup.boolean().oneOf([true], "must choose atleast one toppings").required(""),
-    special: yup.string(),
-    terms: yup.boolean().oneOf([true], "must accept the terms").required("must choose atleast one toppings")
+    // size: yup.string().required("must choose size"),
+    // sauce: yup.string().required("must choose sauce"),
+    // toppings: yup.boolean(),
+    // special: yup.string(),
+    // terms: yup.boolean().oneOf([true], "must accept the terms").required("must choose atleast one toppings")
 });
 
 const Form = () => {
@@ -74,7 +74,7 @@ const validateChange = e => {
 const formSubmit = e => {
     e.preventDefault();
     axios
-        .post("https://reqres.in/api/orders", formState)
+        .post("https://reqres.in/api/orders/", formState)
         .then(res => {
             setPost(res.data);
             setFormState({
@@ -166,6 +166,7 @@ const formSubmit = e => {
                         <label><input type="checkbox" name="toppings[]" value="Jalepeno" />Jalepeno</label>
                     </p>
             </fieldset>
+            < br/>
             <label htmlFor="terms">
                 Review your order and check this box to be able to submit! 
                 <input 
@@ -177,6 +178,10 @@ const formSubmit = e => {
                 />
                 {errors.terms.length > 0 ? (<p className="error">{errors.terms}</p>) : null}
             </label>
+            < br/>
+            <pre>{JSON.stringify(post, null, 3)}</pre>
+            < br/>
+            <button disabled={button}>Add to Order</button>
         </form>
     )};
 
