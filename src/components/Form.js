@@ -5,11 +5,20 @@ import { Link } from "react-router-dom";
 
 const formSchema = yup.object().shape({
     name: yup.string().required("must give name").min(2, "name must be more than 2 characters"),
-    // size: yup.string().required("must choose size"),
-    // sauce: yup.string().required("must choose sauce"),
-    // toppings: yup.boolean(),
-    // special: yup.string(),
-    // terms: yup.boolean().oneOf([true], "must accept the terms").required("must choose atleast one toppings")
+    size: yup.string().required("must choose size"),
+    sauce: yup.string().required("must choose sauce"),
+    pepperoni: yup.boolean(),
+    chicken: yup.bool(),
+    sausage: yup.bool(),
+    bacon: yup.bool(),
+    ham: yup.bool(),
+    cheese: yup.bool(),
+    onion: yup.bool(),
+    mushroom: yup.bool(),
+    pineapple: yup.bool(),
+    jalapeno: yup.bool(),
+    special: yup.string(),
+    terms: yup.boolean().oneOf([true], "must accept the terms")
 });
 
 const Form = () => {
@@ -78,7 +87,7 @@ const formSubmit = e => {
         .then(res => {
             setPost(res.data);
             setFormState({
-                 name: "",
+                name: "",
                 size: "", 
                 sauce: "", 
                 toppings: "", 
@@ -152,18 +161,18 @@ const formSubmit = e => {
                     <p>Choose your favorite toppings!</p>
                     
                     <p>
-                        <label><input type="checkbox" name="toppings[]" value="pepperoni" /> Pepperoni</label>
-                        <label><input type="checkbox" name="toppings[]" value="chicken" /> Chicken</label>
-                        <label><input type="checkbox" name="toppings[]" value="sausage" /> Sausage</label>
-                        <label><input type="checkbox" name="toppings[]" value="Bacon" /> Bacon</label>
-                        <label><input type="checkbox" name="toppings[]" value="Ham" /> Ham</label>
+                        <label><input type="checkbox" name="pepperoni" value="pepperoni" /> Pepperoni</label>
+                        <label><input type="checkbox" name="chicken" value="chicken" /> Chicken</label>
+                        <label><input type="checkbox" name="sausage" value="sausage" /> Sausage</label>
+                        <label><input type="checkbox" name="bacon" value="Bacon" /> Bacon</label>
+                        <label><input type="checkbox" name="ham" value="Ham" /> Ham</label>
                     </p>
                     <p>
-                        <label><input type="checkbox" name="toppings[]" value="Cheese" />Cheese</label>
-                        <label><input type="checkbox" name="toppings[]" value="Onion" />Onion</label>
-                        <label><input type="checkbox" name="toppings[]" value="Mushroom" />Mushroom</label>
-                        <label><input type="checkbox" name="toppings[]" value="Pineapple" />Pineapple</label>
-                        <label><input type="checkbox" name="toppings[]" value="Jalepeno" />Jalepeno</label>
+                        <label><input type="checkbox" name="cheese" value="Cheese" />Cheese</label>
+                        <label><input type="checkbox" name="onion" value="Onion" />Onion</label>
+                        <label><input type="checkbox" name="mushroom" value="Mushroom" />Mushroom</label>
+                        <label><input type="checkbox" name="pineapple" value="Pineapple" />Pineapple</label>
+                        <label><input type="checkbox" name="jalepeno" value="Jalepeno" />Jalepeno</label>
                     </p>
             </fieldset>
             < br/>
